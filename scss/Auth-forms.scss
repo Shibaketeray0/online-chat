@@ -1,4 +1,44 @@
 .form-container{
   width: 100vw;
   height: 100vh;
+
+  background: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form-wrapper{
+  padding: 15px;
+  width: 320px;
+  background: white;
+  border-radius: 10px;
+  form{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+    margin-bottom: 15px;
+  }
+  input{
+    border:1px solid gray;
+    border-radius: 5px;
+    padding: 3px 7px;
+  }
+  label{
+    font-weight: 600;
+  }
+  .auth-button{
+    border-radius: 5px;
+    background: dodgerblue;
+    color:white;
+    padding: 4px 0;
+  }
+  .auth-field{
+    display: flex;
+    flex-direction: column;
+  }
+  .account-message{
+    a{
+      color:dodgerblue;
+    }
+  }
 }
