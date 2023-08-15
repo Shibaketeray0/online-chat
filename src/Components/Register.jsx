@@ -1,15 +1,16 @@
 import {Link} from "react-router-dom";
 
-export default function Login() {
+export default function Register() {
     return (
         <div className={"form-container"}>
             <div className={"form-wrapper"}>
                 <form>
+                    <input type="text" name={"username"}/>
                     <input type="email" name={"email"}/>
                     <input type="password" name={"pass"}/>
-                    <button type={"submit"}>Log in</button>
+                    <button type={"submit"}>Sign up</button>
                 </form>
-                <p> Don’t have an account? <Link to="/register">Sign up</Link></p>
+                <p>Already have an account? <Link to="/login">Log in</Link></p>
             </div>
         </div>
     );
