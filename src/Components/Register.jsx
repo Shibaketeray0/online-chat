@@ -2,6 +2,8 @@ import {useState} from "react";
 import {Link} from "react-router-dom";
 import {auth} from "../firebase.js";
 import {db} from "../firebase.js";
+import {storage} from "../firebase.js";
+import {ref, getDownloadURL} from "firebase/storage";
 import {createUserWithEmailAndPassword} from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 
@@ -9,8 +11,14 @@ export default function Register() {
     const [userName, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [pass, setPass] = useState("");
+    const [initImageURL, setInitImageURL] = useState("");
 
+    let initPictureRef = ref(storage, 'user-avatars/user.png');
 
+    getDownloadURL(initPictureRef)
+        .then(url => {
+            setInitImageURL(url);
+        });
     const registerHandle = (e) => {
         e.preventDefault();
         let email = e.target[1].value;
@@ -20,7 +28,8 @@ export default function Register() {
             .then(() => {
                 setDoc(doc(db, '/users', userName), {
                     UserName: userName,
-                    Email: email
+                    Email: email,
+                    Picture: initImageURL
                 });
             })
             .catch(err => {
@@ -30,6 +39,7 @@ export default function Register() {
         setEmail('');
         setPass('');
     }
+
     return (
         <div className={"form-container"}>
             <div className={"form-wrapper"}>

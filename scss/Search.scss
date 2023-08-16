@@ -1,0 +1,12 @@
+@import '_variables.scss';
+.search-bar{
+  margin-left: 12px;
+  width: 100%;
+  input{
+    width: 100%;
+    padding: 7px 30px;
+    background: $light-gray;
+    border-radius: 20px;
+
+  }
+}

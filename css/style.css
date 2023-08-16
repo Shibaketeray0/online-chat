@@ -43,3 +43,50 @@
 .form-wrapper .account-message a {
   color: dodgerblue;
 }
+
+.burger-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 3px;
+}
+
+.burger-dropdown-menu {
+  position: absolute;
+  display: none;
+}
+
+.burger-dropdown-menu.open {
+  display: block;
+}
+
+.left-column {
+  width: 25%;
+  height: 100vw;
+  border-right: 1px solid #dadce0;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 12px;
+}
+
+.search-bar {
+  margin-left: 12px;
+  width: 100%;
+}
+.search-bar input {
+  width: 100%;
+  padding: 7px 30px;
+  background: #f4f4f5;
+  border-radius: 20px;
+}
+
+body {
+  height: 100%;
+  overflow: hidden;
+}

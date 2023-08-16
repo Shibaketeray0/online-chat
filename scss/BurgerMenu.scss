@@ -1,0 +1,15 @@
+.burger-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  padding: 3px;
+}
+.burger-dropdown-menu{
+  position: absolute;
+  display: none;
+}
+.burger-dropdown-menu.open{
+  display: block;
+}
