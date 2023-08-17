@@ -1,6 +1,15 @@
 @import '_variables.scss';
 .left-column{
+  padding: 0 10px;
   width: 25%;
   height: 100vw;
   border-right: 1px solid $medium-gray;
+  .chat-list{
+    max-height: 100vh;
+    overflow-y:scroll ;
+    overscroll-behavior: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
 }

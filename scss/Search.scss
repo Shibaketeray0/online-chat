@@ -1,5 +1,6 @@
 @import '_variables.scss';
 .search-bar{
+  position: relative;
   margin-left: 12px;
   width: 100%;
   input{
@@ -7,6 +8,10 @@
     padding: 7px 30px;
     background: $light-gray;
     border-radius: 20px;
-
+  }
+  svg{
+    position: absolute;
+    top:15%;
+    left: 2%;
   }
 }

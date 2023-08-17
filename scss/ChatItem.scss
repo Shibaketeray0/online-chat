@@ -1,0 +1,29 @@
+@import "_variables.scss";
+.chat-container{
+  border-radius: 15px;
+  border:1px solid $medium-gray;
+  transition: 0.2s ease;
+  &:hover{
+    background: $light-gray;
+    transition: 0.2s ease;
+  }
+  .open-chat-button{
+    padding: 5px 10px;
+    display: flex;
+  }
+  .status{
+    max-width: fit-content;
+  }
+  .avatar{
+    img{
+      width: 54px;
+      height: 54px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  .info{
+    margin-left: 5px;
+  }
+}
