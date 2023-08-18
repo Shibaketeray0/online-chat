@@ -7,7 +7,11 @@
 @import 'Toolbar.scss';
 @import 'Search.scss';
 @import 'ChatItem.scss';
+@import "MainChat.scss";
 body{
   height: 100%;
   overflow: hidden;
+}
+.page-container{
+  display: flex;
 }

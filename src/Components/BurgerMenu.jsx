@@ -25,7 +25,8 @@ export default function BurgerMenu() {
                 </svg>
             </div>
             <div className={"burger-dropdown-wrapper"}>
-                <ul className={`burger-dropdown-menu ${isOpen && ('open')}`}>
+                <div className="burger-overlay"></div>
+                <ul className={`burger-dropdown-menu ${isOpen ? ('open') : ('closed')}`}>
                     <li className="dropdown-item">
                         <span>
                             Settings

@@ -6,6 +6,7 @@ import {storage} from "../firebase.js";
 import {ref, getDownloadURL} from "firebase/storage";
 import {createUserWithEmailAndPassword} from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
+import {useAuthState} from "react-firebase-hooks/auth";
 
 export default function Register() {
     const [userName, setUserName] = useState("");
@@ -25,11 +26,12 @@ export default function Register() {
         let password = e.target[2].value;
 
         createUserWithEmailAndPassword(auth, email, password)
-            .then(() => {
+            .then((user) => {
                 setDoc(doc(db, '/users', userName), {
                     UserName: userName,
                     Email: email,
-                    Picture: initImageURL
+                    Picture: initImageURL,
+                    Uid: user.user.uid
                 });
             })
             .catch(err => {

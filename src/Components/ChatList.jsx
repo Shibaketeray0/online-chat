@@ -23,31 +23,6 @@ export default function ChatList() {
             {users.length > 0 && (
                 <div className="chat-list">
                     {users.map((user, index) => {
-
-                        return (
-                            <ChatItem item={user} key={index}/>
-                        )
-                    })}
-                    {users.map((user, index) => {
-
-                        return (
-                            <ChatItem item={user} key={index}/>
-                        )
-                    })}
-                    {users.map((user, index) => {
-
-                        return (
-                            <ChatItem item={user} key={index}/>
-                        )
-                    })}
-                    {users.map((user, index) => {
-
-                        return (
-                            <ChatItem item={user} key={index}/>
-                        )
-                    })}
-                    {users.map((user, index) => {
-
                         return (
                             <ChatItem item={user} key={index}/>
                         )
