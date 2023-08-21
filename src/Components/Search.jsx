@@ -1,8 +1,6 @@
+import {db} from "../firebase.js";
 import {useEffect, useState} from "react";
 import {collection, getDocs, query, where} from "firebase/firestore";
-import {db} from "../firebase.js";
-import {use} from "browser-sync";
-
 export default function Search() {
     const [keyWord, setKeyWord] = useState("");
     const [users, setUsers] = useState([]);

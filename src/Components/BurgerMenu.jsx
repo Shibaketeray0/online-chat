@@ -1,17 +1,11 @@
 import {useState} from "react";
-import {signOut} from "firebase/auth";
 import {auth} from "../firebase.js";
+import {signOut} from "firebase/auth";
+
 
 export default function BurgerMenu() {
     const [isOpen, setOpen] = useState(false);
-    const logOut = () => {
-        signOut(auth).then(() => {
 
-        })
-            .catch((err) => {
-                console.log(err);
-            })
-    }
     const handleBurger = () => {
         setOpen(!isOpen);
     }
@@ -38,7 +32,9 @@ export default function BurgerMenu() {
                         </span>
                     </li>
                     <li className="dropdown-item">
-                        <span onClick={logOut}>
+                       <span onClick={() => {
+                           signOut(auth);
+                       }}>
                             Log out
                         </span>
                     </li>
