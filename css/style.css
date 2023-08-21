@@ -122,6 +122,22 @@
   left: 2%;
 }
 
+.search-results {
+  position: absolute;
+  background: #fff;
+  width: 100%;
+  border-radius: 15px;
+  border: 1px solid #dadce0;
+}
+.search-results .chat-container {
+  border: none;
+  border-bottom: 1px solid #dadce0;
+  border-radius: 0;
+}
+.search-results .chat-container:last-child {
+  border-bottom: none;
+}
+
 .chat-container {
   border-radius: 15px;
   border: 1px solid #dadce0;

@@ -1,10 +1,11 @@
 import {db} from "../firebase.js";
 import {useEffect, useState} from "react";
 import {collection, getDocs, query, where} from "firebase/firestore";
+import ChatItem from "./ChatItem.jsx";
+
 export default function Search() {
-    const [keyWord, setKeyWord] = useState("");
+    const [keyWord, setKeyWord] = useState('');
     const [users, setUsers] = useState([]);
-    const [filteredRes, setFilteredRes] = useState([]);
 
     useEffect(() => {
         (async () => {
@@ -16,20 +17,7 @@ export default function Search() {
             setUsers(usr_list);
         })();
     }, []);
-
-    const dynamicKeyWordChange = (e) => {
-        e.preventDefault();
-        setKeyWord(e.target.value);
-        // if (keyWord !==  '') {
-        //     const filteredData = users.filter(user => {
-        //        console.log((user.UserName.stringValue).toLowerCase().includes(keyWord.toLowerCase()));
-        //     })
-        //     setFilteredRes(filteredData);
-        // }
-        // else {
-        //     setFilteredRes(users);
-        // }
-    }
+    console.log(users);
 
 
     return (
@@ -40,16 +28,25 @@ export default function Search() {
                       d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"/>
             </svg>
 
-            <input type="text" placeholder={"Search"} value={keyWord} onChange={dynamicKeyWordChange}/>
+            <input type="text" placeholder={"Search"} value={keyWord} onChange={e => {
+                setKeyWord(e.target.value)
+            }}/>
 
-            {/*{filteredRes && (*/}
-            {/*    filteredRes.map((value, index) => {*/}
-            {/*        return (*/}
-            {/*            <div key={index}>{value.UserName.stringValue}</div>*/}
-            {/*        )*/}
-            {/*    })*/}
-            {/*)}*/}
-
+            {keyWord &&
+                <div className={"search-results"}>
+                    {
+                        users.filter(user => {
+                            if (keyWord === '') {
+                                return "";
+                            } else if (user.UserName.stringValue.toLowerCase().includes(keyWord.toLowerCase())) {
+                                return user;
+                            }
+                        }).map((user, index) => (
+                            <ChatItem item={user} key={index}/>
+                        ))
+                    }
+                </div>
+            }
         </div>
     );
 }
