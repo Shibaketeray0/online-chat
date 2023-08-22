@@ -17,8 +17,6 @@ export default function Search() {
             setUsers(usr_list);
         })();
     }, []);
-    console.log(users);
-
 
     return (
         <div className="search-bar">

@@ -30,9 +30,9 @@ export default function App() {
   return (
       <Router>
               <Routes>
-                  <Route path="/" element={loggedIn ? <Homepage/> : (loggedIn === false && <Navigate to={"/login"}/>) }/>
                   <Route path="/login" element={loggedIn ? <Navigate to={"/"}/> : (loggedIn === false && <Login/>) } />
                   <Route path="/register" element={loggedIn ? <Navigate to={"/"}/> : (loggedIn === false && <Register/>) }/>
+                  <Route path="/*" element={loggedIn ? <Homepage/> : (loggedIn === false && <Navigate to={"/login"}/>) }/>
                   <Route path="*" element={<NotFound/>}/>
               </Routes>
       </Router>
